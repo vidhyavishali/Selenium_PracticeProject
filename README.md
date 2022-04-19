@@ -1,0 +1,2 @@
+# WeeklyAssignments
+ Weekly assignment routine
