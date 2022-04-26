@@ -1,18 +1,18 @@
-package week1.day2;
+package week2.day1;
 
 public class Palindrome {
 
 	public static void main(String[] args) {
 
+		/** Palindrome is a string, which is same when read in reverse order */
 		String input = "madam";
 
 		char[] reverse = reverseString(input);
-		
-		if( input.equals(String.valueOf(reverse)))
-				System.out.println("Palindrome");
+
+		if (input.equals(String.valueOf(reverse)))
+			System.out.println("Palindrome");
 		else
 			System.out.println("Not a Palindrome");
-			
 
 	}
 
