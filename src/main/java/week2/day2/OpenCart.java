@@ -18,7 +18,8 @@ public class OpenCart {
 		driver.findElement(By.id("input-email")).sendKeys("emailV@gvx.com");
 		driver.findElement(By.id("input-password")).sendKeys("passwordV");
 		driver.findElement(By.id("input-country")).sendKeys("India");
-		
+		String iconToClick = driver.findElement(By.xpath("//div[@class='bg-info']/strong")).getText();
+		System.out.println(iconToClick);
 	}
 
 }

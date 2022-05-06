@@ -1,4 +1,4 @@
-package week2.day2;
+package week2.day2.validations;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
