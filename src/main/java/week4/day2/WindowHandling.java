@@ -19,7 +19,7 @@ public class WindowHandling {
 
 		driver.get("http://leaftaps.com/opentaps/control/login");
 		driver.manage().window().maximize();
-		customInitialBrowserSetup(driver);
+	//	customInitialBrowserSetup(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.findElement(By.id("username")).sendKeys("Demosalesmanager");
 		driver.findElement(By.id("password")).sendKeys("crmsfa");

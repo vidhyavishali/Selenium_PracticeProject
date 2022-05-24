@@ -18,7 +18,9 @@ public class Dropdowns {
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver = new ChromeDriver();
 		driver.get("http://www.leafground.com/pages/Dropdown.html");
-		customInitialBrowserSetup(driver);
+		driver.manage().window().maximize();
+		// customInitialBrowserSetup(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		Select ddByIndex = new Select(driver.findElement(By.id("dropdown1")));
 		Select ddByText = new Select(driver.findElement(By.name("dropdown2")));
 		Select ddByValue = new Select(driver.findElement(By.id("dropdown3")));
@@ -42,7 +44,7 @@ public class Dropdowns {
 		ddSendKeys.sendKeys("Selenium");
 
 		ddmultiples.deselectAll();
-		ddmultiples.selectByIndex(4); 
+		ddmultiples.selectByIndex(4);
 		ddmultiples.selectByValue("1");
 		ddmultiples.selectByVisibleText("UFT/QTP");
 
@@ -50,7 +52,7 @@ public class Dropdowns {
 		ddmultiples.getAllSelectedOptions().forEach(e -> System.out.println(e.getText()));
 
 		Thread.sleep(5000);
-		 driver.quit();
+		driver.quit();
 
 	}
 
