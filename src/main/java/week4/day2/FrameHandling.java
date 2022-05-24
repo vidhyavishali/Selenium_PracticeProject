@@ -18,7 +18,9 @@ public class FrameHandling {
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver = new ChromeDriver();
 		driver.get("https://chercher.tech/practice/frames-example-selenium-webdriver");
-		customInitialBrowserSetup(driver);
+		driver.manage().window().maximize();
+		// customInitialBrowserSetup(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 		System.out.println("Outside all frames: " + driver.findElement(By.tagName("label")).getText());
 		WebElement frame2 = driver.findElement(By.id("frame2"));

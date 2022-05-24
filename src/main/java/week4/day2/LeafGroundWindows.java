@@ -16,7 +16,9 @@ public class LeafGroundWindows {
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver = new ChromeDriver();
 		driver.get("http://www.leafground.com/pages/Window.html");
-		customInitialBrowserSetup(driver);
+		driver.manage().window().maximize();
+		// customInitialBrowserSetup(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		System.out.println("This is the first opened window " + driver.getWindowHandle());
 		System.out.println("Clicking home..");
 		driver.findElement(By.id("home")).click();

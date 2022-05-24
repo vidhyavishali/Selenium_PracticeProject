@@ -21,7 +21,9 @@ public class ScreenShots {
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver = new ChromeDriver();
 		driver.get("https://www.amazon.in/");
-		customInitialBrowserSetup(driver);
+		driver.manage().window().maximize();
+		// customInitialBrowserSetup(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Oneplus 9 pro", Keys.ENTER);
 		WebElement resultElem = driver.findElement(By.xpath(
 				"//div[@class='a-section a-spacing-none s-padding-right-small s-title-instructions-style']//h2//span"));
@@ -40,7 +42,8 @@ public class ScreenShots {
 		FileUtils.copyFile(ss, op);
 		driver.findElement(By.id("add-to-cart-button")).click();
 		String cartPrice = driver.findElement(By.id("attach-accessory-cart-subtotal")).getText();
-	//	String cartPrice = driver.findElement(By.xpath("//span[@id='attach-accessory-cart-subtotal']")).getText();
+		// String cartPrice =
+		// driver.findElement(By.xpath("//span[@id='attach-accessory-cart-subtotal']")).getText();
 		System.out.println("CartPrice is:" + cartPrice);
 		if (cartPrice.trim().equals(price.trim()))
 			System.out.println("Price validated");
